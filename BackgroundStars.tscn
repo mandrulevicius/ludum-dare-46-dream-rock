@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sparkle1Small.png" type="Texture" id=1]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0.148774 ), 0.0, 0.0798664, 0, 0, Vector2( 1, 0.130592 ), -0.547186, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 0.2
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 0.31
+scale_curve = SubResource( 2 )
+
+[node name="BackgroundStar" type="Particles2D"]
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+amount = 3
+lifetime = 2.0
+process_material = SubResource( 3 )
+texture = ExtResource( 1 )

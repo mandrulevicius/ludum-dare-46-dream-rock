@@ -1,0 +1,156 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GameStateLabel.gd" type="Script" id=1]
+[ext_resource path="res://MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://PetRock.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.290196, 0.290196, 0.290196, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.458824, 0.458824, 0.458824, 1 )
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0901961, 0.0901961, 0.0901961, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.317647, 0.317647, 0.317647, 1 )
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="MainMenu" type="Node"]
+script = ExtResource( 2 )
+
+[node name="MenuPanel" type="Panel" parent="."]
+margin_left = 329.0
+margin_top = 120.0
+margin_right = 655.0
+margin_bottom = 530.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 454.909
+margin_top = 345.059
+margin_right = 541.909
+margin_bottom = 383.059
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 479.464
+margin_top = 498.849
+margin_right = 519.464
+margin_bottom = 518.849
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeLabel" type="Label" parent="."]
+visible = false
+margin_left = 474.294
+margin_top = 365.737
+margin_right = 523.294
+margin_bottom = 379.737
+text = "Volume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VolumeHSlider" type="HSlider" parent="."]
+visible = false
+margin_left = 430.355
+margin_top = 388.999
+margin_right = 575.355
+margin_bottom = 412.999
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameStateLabel" type="Label" parent="."]
+visible = false
+margin_left = 466.54
+margin_top = 227.455
+margin_right = 540.54
+margin_bottom = 241.455
+text = "Game State"
+align = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameNameLabel" type="Label" parent="."]
+margin_left = 455.0
+margin_top = 134.0
+margin_right = 536.0
+margin_bottom = 148.0
+text = "Dream Rock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 350.0
+margin_top = 265.877
+margin_right = 639.0
+margin_bottom = 335.877
+custom_styles/normal = SubResource( 2 )
+text = "Keep your pet rock alive while
+keeping yourself alive long enough to
+polish and release it into the wilds..."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PetRock" type="Sprite" parent="."]
+position = Vector2( 497.635, 213.305 )
+texture = ExtResource( 3 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 339.889
+margin_top = 395.461
+margin_right = 644.889
+margin_bottom = 493.461
+custom_styles/normal = SubResource( 3 )
+text = "Keep mouse on the rock to give it attention.
+ Moving it is more effective.
+Leftclick and drag mouse on rock to polish it.
+Rightclick on rock to release.
+Click on events to improve your health."
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="PlayButton" to="." method="_on_PlayButton_button_up"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_QuitButton_button_up"]

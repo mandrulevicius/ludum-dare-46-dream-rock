@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GameOver.gd" type="Script" id=1]
+[ext_resource path="res://GameOverLabel.gd" type="Script" id=2]
+
+[node name="GameOver" type="Node"]
+script = ExtResource( 1 )
+
+[node name="GameOverLabel" type="Label" parent="."]
+margin_left = 439.401
+margin_top = 175.76
+margin_right = 559.401
+margin_bottom = 223.76
+grow_horizontal = 2
+text = "Game Over text
+either good ending
+or bad ending"
+align = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartButton" type="Button" parent="."]
+margin_left = 470.417
+margin_top = 242.963
+margin_right = 527.417
+margin_bottom = 262.963
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 478.171
+margin_top = 304.996
+margin_right = 518.171
+margin_bottom = 324.996
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="RestartButton" to="." method="_on_RestartButton_button_up"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_QuitButton_button_up"]
